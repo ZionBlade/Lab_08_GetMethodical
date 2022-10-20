@@ -191,5 +191,35 @@ public class SafeInput
         return retVal;
     }
 
+    /**
+     *gets a string that matches a regular expression pattern like ###-##-### \d{3}-\d{2}-\d{4}
+     *
+     * @param pipe scanner to use for input
+     * @param prompt prompt that tells the user what we want
+     * @param pattern A regEx Pattern to use for the test
+     * @return a string entered by the user that matches the pattern
+     */
+    public static String getRegExString(Scanner pipe, String prompt, String pattern)
+    {
+        String retVal = "";
+        boolean done = false;
+
+        do {
+            System.out.print(prompt + ": ");
+
+            retVal = pipe.nextLine();
+            if(retVal.matches(pattern))
+            {
+                done = true;
+            }
+            else
+            {
+
+                System.out.println("What you entered does not match the pattern: " + pattern);
+            }
+        }while(!done);
+
+        return retVal;
+    }
 
 }

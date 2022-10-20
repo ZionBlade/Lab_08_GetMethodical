@@ -15,7 +15,9 @@ public class DevTest
 
         //double tax = SafeInput.getRangedDouble(console, "enter your tax", 100, 1000);
 
+        //boolean isRaining = SafeInput.getYNConfirm(console, "Is it raining");
 
+        //String ssn = SafeInput.getRegExString(console, "enter your SSN ###-##-###", "\\d{3}-\\d{2}-\\d{4}");
     }
 
 }
