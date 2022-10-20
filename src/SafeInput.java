@@ -118,5 +118,78 @@ public class SafeInput
         return retVal;
     }
 
+    /**
+     * Get a double value within a specified range of low - high
+     *
+     * @param pipe scanner to use for console input
+     * @param prompt string that tells the user what to input
+     * @param low low value for a range low - high
+     * @param high high value for a range low - high
+     * @return a double value within the low - high range
+     */
+    public static double getRangedDouble(Scanner pipe, String prompt, double low, double high)
+    {
+        double retVal = low - 1;
+        String trash = "";
+
+        boolean done = false;
+        do {
+            System.out.print(prompt + "[" + low + " - " + high +"] : ");
+            if(pipe.hasNextDouble())
+            {
+                retVal = pipe.nextDouble();
+                pipe.nextLine();
+                if (retVal >= low && retVal <= high) {
+
+                    done = true;
+                } else {
+                    System.out.println("You said the val is " + retVal + " but that is out of range [" + low + " - " + high + "]");
+                }
+            } else
+            {
+                trash = pipe.nextLine();
+                System.out.println("you entered: " + trash + ". You must enter a valid val!");
+            }
+        }while(!done);
+
+        return retVal;
+    }
+
+    /**
+     * gets a Y or N from the user and returns a True or False respectively
+     *
+     * @param pipe scanner to use to get the input
+     * @param prompt string prompt for the user the yes/no question
+     * @return a boolean value true for Y and false for N
+     */
+    public static boolean getYNConfirm(Scanner pipe, String prompt)
+    {
+        String respYN = "";
+        boolean retVal = false;
+        boolean done = false;
+
+        do{
+            System.out.print(prompt + " [Y/N]: ");
+            respYN = pipe.nextLine();
+
+            if(respYN.equalsIgnoreCase("Y"))
+            {
+                retVal = true;
+                done = true;
+            }
+            else if (respYN.equalsIgnoreCase("N"))
+            {
+                retVal = false;
+                done = true;
+            }
+            else{
+                System.out.println("you must enter [Y/N]: ");
+            }
+
+        } while(!done);
+
+        return retVal;
+    }
+
 
 }
