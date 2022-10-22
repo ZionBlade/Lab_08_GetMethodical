@@ -1,6 +1,7 @@
 import java.util.Scanner;
 public class BirthDateTime
 {
+    public static void main(String[] args)
     {
         Scanner console = new Scanner(System.in);
 
@@ -30,9 +31,13 @@ public class BirthDateTime
                 birthDay = SafeInput.getRangedInt(console, "enter your birth day", 1, 31);
                 break;
             }
-
-
         }
+
+        birthHour = SafeInput.getRangedInt(console, "enter your birth hour", 1, 24);
+        birthMinute = SafeInput. getRangedInt(console, "enter your birth minute", 1, 59);
+
+        System.out.println("you said you were born on " + birthMonth + " " + birthDay + " in " + birthYear + " " +
+                "at " + birthHour + ":" + birthMinute);
 
 
 
