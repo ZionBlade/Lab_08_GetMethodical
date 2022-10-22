@@ -64,7 +64,7 @@ public class SafeInput
         boolean done = false;
 
         do {
-            System.out.print(prompt + ": ");
+            System.out.print("\n" + prompt + ": ");
             if(pipe.hasNextDouble())
             {
                 retVal = pipe.nextDouble();
@@ -97,7 +97,7 @@ public class SafeInput
 
         boolean done = false;
         do {
-            System.out.print(prompt + "[" + low + " - " + high +"] : ");
+            System.out.print("\n" + prompt + "[" + low + " - " + high +"] : ");
             if(pipe.hasNextInt())
             {
                 retVal = pipe.nextInt();
@@ -134,7 +134,7 @@ public class SafeInput
 
         boolean done = false;
         do {
-            System.out.print(prompt + "[" + low + " - " + high +"] : ");
+            System.out.print("\n" + prompt + "[" + low + " - " + high +"] : ");
             if(pipe.hasNextDouble())
             {
                 retVal = pipe.nextDouble();
@@ -169,7 +169,7 @@ public class SafeInput
         boolean done = false;
 
         do{
-            System.out.print(prompt + " [Y/N]: ");
+            System.out.print("\n" + prompt + " [Y/N]: ");
             respYN = pipe.nextLine();
 
             if(respYN.equalsIgnoreCase("Y"))
@@ -205,7 +205,7 @@ public class SafeInput
         boolean done = false;
 
         do {
-            System.out.print(prompt + ": ");
+            System.out.print("\n" + prompt + ": ");
 
             retVal = pipe.nextLine();
             if(retVal.matches(pattern))
