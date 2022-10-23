@@ -222,4 +222,59 @@ public class SafeInput
         return retVal;
     }
 
+    public static String prettyHeader(Scanner pipe, String prompt)
+    {
+
+        String retVal = "";
+
+
+        do {
+            System.out.print("\n" + prompt + ": ");
+            retVal = pipe.nextLine();
+            if (retVal.length() == 0) {
+                System.out.println("You must have an input");
+            }
+        } while (retVal.length() == 0);
+
+        int length = retVal.length();
+        int space = 54 - length;
+        int right = space / 2;
+        int left = 0;
+
+        if (space % 2 == 0) {
+            left = right;
+        } else {
+            left = right + 1;
+        }
+
+        for (int x = 1; x <= 1; x++)
+        {
+            for (int y = 1; y <= 60; y++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+            for (int y = 1; y <= 1; y++) {
+                System.out.print("***");
+                for (int r = 1; r <= right; r++) {
+                    System.out.print(" ");
+                }
+                System.out.print(retVal);
+                for (int l = 1; l <= left; l++) {
+                    System.out.print(" ");
+                }
+                System.out.print("***");
+            }
+            System.out.println();
+            for (int y = 1; y <= 60; y++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+
+        }
+        return retVal;
+
+    }
+
 }
